@@ -1,13 +1,15 @@
 from tkinter import *
 from tkinter import ttk
 from tkinter import scrolledtext
+import os.path
 import json
 #Dictionaries // Словари
 dictEnEnc = {'a':'.- ' ,'b':'-... ','c':'-.-. ','d':'-.. ','e':'. ','f':'..-. ','g':'--. ','h':'.... ','i':'.. ','j':'.--- ','k':'-.- ','l':'.-.. ','m':'-- ','n':'-. ','o':'--- ','p':'.--. ','q':'--.- ','r':'.-. ','s':'... ','t':'- ','u':'..- ','v':'...- ','w':'.-- ','x':'-..- ','y':'-.-- ','z':'--.. ','0':'----- ','9':'----. ','8':'---.. ','7':'--... ','6':'-.... ','5':'..... ','4':'....- ','3':'...-- ','2':'..--- ','1':'.---- ',' ':'_ '}
 dictRuEnc = {'а':'.- ','б':'-... ','в':'.-- ','г':'--. ','д':'-.. ','е':'. ','ж':'...- ','з':'--.. ','и':'.. ','й':'.--- ','к':'-.- ','л':'.-.. ','м':'-- ','н':'-. ','о':'--- ','п':'.--. ','р':'.-. ','с':'... ','т':'- ','у':'..- ','ф':'..-. ','х':'.... ','ц':'-.-. ','ч':'---. ','ш':'---- ','щ':'--.- ','ъ':'.--.-. ','ы':'-.-- ','ь':'-..- ','э':'...-... ','ю':'..-- ','я':'.-.- ','0':'----- ','9':'----. ','8':'---.. ','7':'--... ','6':'-.... ','5':'..... ','4':'....- ','3':'...-- ','2':'..--- ','1':'.---- ',' ':'_ '}
 #Download custom Dictionary // Загрузка настраиваемого словаря
-with open('dict.json', 'r') as read_file:
-    dictCustomEnc = json.load(read_file)
+if os.path.isfile('dict.json'): 
+    with open('dict.json', 'r') as read_file:
+        dictCustomEnc = json.load(read_file)
 
 #Generating decrypting dictionaries // Генерация словарей расшифровки
 # English dictionary // Английский словарь
@@ -21,10 +23,11 @@ for k, v in dictRuEncC.items():
     dictRuEncC[k] = v.rstrip()
 dictRuDec = dict(zip(dictRuEncC.values(), dictRuEncC.keys()))
 # Custom dictionary // Настраиваемый словарь
-dictCustomEncC = dictCustomEnc.copy()
-for k, v in dictCustomEncC.items():
-    dictCustomEncC[k] = v.rstrip()
-dictCustomDec = dict(zip(dictCustomEncC.values(), dictCustomEncC.keys()))
+if os.path.isfile('dict.json'): 
+    dictCustomEncC = dictCustomEnc.copy()
+    for k, v in dictCustomEncC.items():
+        dictCustomEncC[k] = v.rstrip()
+    dictCustomDec = dict(zip(dictCustomEncC.values(), dictCustomEncC.keys()))
 
 #*Code // Код
 #Encrypting to Morse // Шифровка в морзе
