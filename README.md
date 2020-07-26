@@ -1,4 +1,7 @@
 # Morse Translater
+
+![Banner](https://github.com/Ninnjah/Morse-translater/blob/master/banner.jpg)
+
 It's python program working with dictionaries and clipboard, and it can encrypt to morse from English, Russian and Custom dict and decrypt.
 
 ## Capabilities
