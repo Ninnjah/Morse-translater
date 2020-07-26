@@ -16,7 +16,6 @@ It's python program working with dictionaries and clipboard, and it can encrypt 
     morseWords = morseDec.split(' ')
     morseWords = list(filter(bool, morseWords))
     morseDecB = ''
-    # Clear the console // Очистка консоли
     os.system('cls||clear')  
     for i in morseWords:
         if i in dictDec:
