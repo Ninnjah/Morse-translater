@@ -30,4 +30,4 @@ It's python program working with dictionaries and clipboard, and it can encrypt 
 
 ![CMD](https://github.com/Ninnjah/Morse-translater/blob/master/banner.jpg)
 
-![GUI](https://github.com/Ninnjah/Morse-translater/blob/master/GUI.jpg)
+![GUI](https://github.com/Ninnjah/Morse-translater/blob/master/GUI.JPG)
