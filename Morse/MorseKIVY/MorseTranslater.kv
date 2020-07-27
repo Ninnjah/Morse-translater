@@ -1,0 +1,60 @@
+# kivy 1.4
+
+<Container>:
+    orientation: 'vertical'
+    padding: 20
+    morseEn: morseEnInput
+    morseDec: morseDecInput
+    langSpin: spinner
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+        Label:
+            halign: 'right'
+            valign: 'middle'
+            size_hint: 1, 0.1
+            text: 'Ecryption'
+        Label:
+            size_hint: 1, 0.1
+        TextInput:
+            size_hint: 1, 0.6
+            size_y: 1000
+            id: morseEnInput
+        Button:
+            size_hint: 1, 0.3
+            text: 'Encrypt'
+
+            on_release:
+                root.Encrypt()
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+        Label:
+            align: 'center'
+            size_hint: 1, 0.1
+            text: 'Decryption'
+        Label:
+            size_hint: 1, 0.1
+        TextInput:
+            size_hint: 1, 0.6
+            id: morseDecInput
+        Button:
+            size_hint: 1, 0.3
+            text: 'Decrypt'
+
+            on_release:
+                root.Decrypt()
+
+    FloatLayout:
+        size: 100, 100
+        Spinner:
+            id: spinner
+            text: 'English'
+            values: 'English', 'Russian', 'Custom'
+            size_hint: 0.4, 0.4
+            pos_hint:{"center_x":0.5,"center_y":0.1}
+        
